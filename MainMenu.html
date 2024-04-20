@@ -30,22 +30,24 @@
     }
 
     .button {
-        margin: 10px;
-        width: 150px;
-        height: 50px;
-        background-color: white;
-        border: 5px solid #333; /* темно-сіра обводка */
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
+    margin: 10px auto; /* центрування по горизонталі */
+    width: 200px; /* збільшення ширини кнопок */
+    height: 60px; /* збільшення висоти кнопок */
+    background-color: #fff; /* білий фон */
+    border: 3px solid #333; /* тонка темно-сіра обводка */
+    border-radius: 15px; /* більш виразне закруглення кутів */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* плавна анімація */
+}
 
-    .button img {
-        width: 100%;
-        height: auto;
-    }
+.button:hover {
+    background-color: #f0f0f0; /* колір при наведенні курсору */
+    border-color: #666; /* колір обводки при наведенні курсору */
+}
+
 </style>
 </head>
 <body>
