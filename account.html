@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Створення акаунта</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #4CAF50;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Створення акаунта</h2>
+        <form id="createAccountForm" action="#" method="post">
+            <input type="text" id="username" name="username" placeholder="Ім'я користувача" required>
+            <input type="password" id="password" name="password" placeholder="Пароль" required>
+            <input type="button" id="showPasswordBtn" value="Показати пароль">
+            <input type="submit" value="Створити акаунт">
+        </form>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://constitution.in.ua/articles/32/#Text">Політика конфіденційності</a>
+    </div>
+    <script>
+        document.getElementById("showPasswordBtn").addEventListener("click", function() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.value = "Приховати пароль";
+            } else {
+                passwordField.type = "password";
+                this.value = "Показати пароль";
+            }
+        });
+
+        document.getElementById("createAccountForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // Тут можна додати код для збереження значень ім'я користувача та пароля
+            // наприклад, можна використати localStorage
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+            // Після збереження перенаправлення на сторінку редагування профілю
+            window.location.href = "MainMenu.html";
+        });
+    </script>
+</body>
+</html>

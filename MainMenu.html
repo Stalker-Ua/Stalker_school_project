@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Background with Semi-Transparent Rectangle</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        right: 100px;
+        bottom: 100px;
+        background-color: rgba(0, 0, 0, 0.68); /* напівпрозорий чорний колір */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        margin: 10px;
+        width: 150px;
+        height: 50px;
+        background-color: white;
+        border: 5px solid #333; /* темно-сіра обводка */
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .button img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="overlay">
+    <div class="button" onclick="location.href='history.html'">
+        <span>Про серію ігор</span>
+    </div>
+    <div class="button" onclick="location.href='info.html'">
+        <span>Інші джерела</span>
+    </div>
+    <div class="button" onclick="location.href='donate.html'">
+        <span>Задонатити автору на шаурму</span>
+    </div>
+    <div class="button" onclick="location.href='edit_profile.html'">
+        <span>Редагувати профіль</span>
+    </div>
+</div>
+<script>
+    // Задаємо масив з назвами файлів картинок
+    var images = ["MainMenu.jpg", "MainMenu2.jpg", "MainMenu3.jpg"];
+
+    // Вибираємо випадковий індекс з масиву
+    var randomIndex = Math.floor(Math.random() * images.length);
+
+    // Отримуємо випадкову картинку з масиву
+    var randomImage = images[randomIndex];
+
+    // Встановлюємо фонову картинку для тіла сторінки
+    document.body.style.backgroundImage = "url('" + randomImage + "')";
+</script>
+</body>
+</html>

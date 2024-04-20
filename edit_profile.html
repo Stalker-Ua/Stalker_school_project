@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагування профілю</title>
+    <style>
+        body {
+            background-image: url('edit_profileBG.jpg');
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"], input[type="password"], input[type="file"], select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #4CAF50;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .close-btn {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Редагування профілю</h2>
+        <form id="editProfileForm" action="#" method="post">
+            <label for="newUsername">Нове ім'я користувача:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <label for="newPassword">Новий пароль:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+            <label for="profilePicture">Фото профілю:</label>
+            <input type="file" id="profilePicture" name="profilePicture">
+            <label for="country">Країна:</label>
+            <select id="country" name="country">
+                <option value="ukraine">Україна</option>
+                <option value="usa">США</option>
+                <option value="canada">Канада</option>
+                <!-- Додайте інші країни за необхідності -->
+            </select>
+            <input type="submit" value="Зберегти зміни">
+            <button class="close-btn">Закрити</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("newUsername").value = localStorage.getItem("username");
+        document.getElementById("newPassword").value = localStorage.getItem("password");
+
+        document.getElementById("editProfileForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var newUsername = document.getElementById("newUsername").value;
+            var newPassword = document.getElementById("newPassword").value;
+            // Тут можна додати код для збереження нових значень ім'я користувача та пароля
+            // інших даних, наприклад, фото профілю і країни
+            localStorage.setItem("username", newUsername);
+            localStorage.setItem("password", newPassword);
+            // Повідомлення про успішне збереження
+            alert("Зміни збережено!");
+        });
+
+        // Додамо обробник події для кнопки "Close"
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            window.location.href = 'MainMenu.html';
+        });
+    </script>
+</body>
+</html>

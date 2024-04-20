@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікно з top-bar, right-bar і main-bar</title>
+    <style>
+        /* Стилі для розмітки */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url('wallpaperbetter.jpg'); /* Фонове зображення wallpaperbetter.jpg */
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний колір */
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-start; /* Розташування вліво */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Зелений колір з напівпрозорим ефектом */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            margin: 0 -5px;
+        }
+        .main-bar {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+        }
+        .right-bar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+            text-align: center; /* Центруємо текст */
+            font-family: Calibri, sans-serif; /* Зміна шрифту */
+        }
+        .right-bar a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px; /* Додана відстань між пунктами */
+            display: block; /* Переносить кожен пункт на новий рядок */
+        }
+        .right-bar a:hover {
+            color: red; /* Колір тексту при наведенні */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button onclick="window.location.href='MainMenu.html'" style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer;">На головну</button>
+        </div>
+        <div class="content">
+            <div class="main-bar">
+                <!-- Видалено текст -->
+            </div>
+            <div class="right-bar">
+                <a href="OtherPage1.html" target="_blank">Пункт 1</a>
+                <a href="OtherPage2.html" target="_blank">Пункт 2</a>
+                <a href="OtherPage3.html" target="_blank">Пункт 3</a>
+                <a href="OtherPage4.html" target="_blank">Пункт 4</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

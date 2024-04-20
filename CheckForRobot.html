@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Підтвердження, що ви не робот</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .message {
+        font-weight: bold;
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div id="verification">
+    <p>Введіть цей набір символів, щоб ми впевнилися, що ви не робот (у вас 3 спроби):</p>
+    <p id="verificationCode"></p>
+    <input type="text" id="userInput">
+    <button onclick="checkCode()">Перевірити</button>
+    <p class="message" id="errorMessage"></p>
+</div>
+
+<div id="page2" style="display: none;">
+    <p>Ви успішно перевірилися як людина!</p>
+    <!-- Додайте тут контент для другої сторінки -->
+</div>
+
+<script>
+    var code = generateCode();
+    var attempts = 3;
+
+    function generateCode() {
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var code = '';
+        for (var i = 0; i < 6; i++) {
+            code += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.getElementById("verificationCode").innerText = code;
+        return code;
+    }
+
+    function checkCode() {
+        var userInput = document.getElementById("userInput").value;
+        if (userInput === code) {
+            // Перенаправлення на другу сторінку
+            window.location.href = "account.html";
+        } else {
+            attempts--;
+            if (attempts === 0) {
+                // Перенаправлення на першу сторінку, якщо спроби закінчились
+                window.location.href = "BAN.html";
+            } else {
+                document.getElementById("errorMessage").innerText = "Не правильно. Залишилося спроб: " + attempts;
+            }
+        }
+    }
+</script>
+</body>
+</html>

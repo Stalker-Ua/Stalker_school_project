@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Робить контент по центру екрана */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Оплата</h1>
+    <form id="paymentForm">
+        <input type="text" placeholder="Місто">
+        <input type="text" placeholder="Квартира">
+        <input type="email" placeholder="Електронна пошта">
+        <input type="tel" placeholder="Номер телефону">
+        <input type="text" placeholder="Номер картки">
+        <input type="text" placeholder="CVV код">
+        <input type="submit" value="Оплатити">
+    </form>
+
+    <img id="loadingImg" src="VAyR.gif" style="display: none;"> <!-- Гіфка не відображається спочатку -->
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Заборонити відправку форми
+
+            document.getElementById("loadingImg").style.display = "block"; // Відобразити гіфку
+
+            setTimeout(function() {
+                alert("Дякую за донат на шаурму 😅");
+                window.location.href = "MainMenu.html";
+            }, 5000); // 5000 мілісекунд = 5 секунд
+        });
+    </script>
+</body>
+</html>
