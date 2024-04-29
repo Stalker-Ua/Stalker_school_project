@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікно з top-bar, right-bar і main-bar</title>
+    <style>
+        /* Стилі для розмітки */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url('wallpaperbetter.jpg'); /* Фонове зображення wallpaperbetter.jpg */
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний колір */
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-start; /* Розташування вліво */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Зелений колір з напівпрозорим ефектом */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            margin: 0 -5px;
+        }
+        .main-bar {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+            font-family: Calibri, sans-serif; /* Зміна шрифту */
+        }
+        .right-bar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+            text-align: center; /* Центруємо текст */
+            font-family: Calibri, sans-serif; /* Зміна шрифту */
+        }
+        .right-bar a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px; /* Додана відстань між пунктами */
+            display: block; /* Переносить кожен пункт на новий рядок */
+        }
+        .right-bar a:hover {
+            color: red; /* Колір тексту при наведенні */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button onclick="window.location.href='MainMenu.html'" style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer;">На головну</button>
+        </div>
+        <div class="content">
+            <div class="main-bar">
+                <p><strong>Мутанти зі всесвіту сталкер</strong></p>
+                <p><strong>КРОВОСОС</strong></p>
+                <img src="/Mutant/Кровосос.jpeg" alt="Кровосос" style="width: 100%; max-width: 400px;">
+                <p>“Напівлегендарний монстр – матері сталкери описують його як високого сутулого гуманоїда з безліччю щупалець на місці рота. За їхніми словами, за допомогою щупалець ця істота живиться: впиваючись ними в шию живої жертви, паралізує свою видобуток і висмоктує її кров; після такої процедури від людини залишається лише висохла оболонка, що нагадує мумію. Найдивовижніше в кровососі — його здатність ставати невидимою. Зважаючи на все, саме ці створіння відповідальні за смерть великої кількості сталкерів. Мало хто з очевидців залишився живим — і, судячи з розповідей цих щасливчиків, для проживання кровососи віддають перевагу сирим місцям на зразок боліт і підземель.”</p>
+                <p><strong>БЮРЕР</strong></p>
+                <img src="/Mutant/Бюрер.jpeg" alt="Бюрер" style="width: 100%; max-width: 400px;">
+                <p>“Бюрери для нападу використовують гравітацію. Будеш близько - він тебе відкине, здасться здалеку - кине в тебе що важче. Тактика з ним така: бий із середньої дистанції і, головне, на місці зайвої секунди не стій. Тільки сили при цьому бережи, з огляду витрачай: бюрер може зброю з рук вирвати своєю гравітацією. Вміє він це діло добре, особливо якщо мисливець підслаб.</p>
+                <p><strong>КОНТРОЛЕР</strong></p>
+                <img src="/Mutant/Контролер.jpeg" alt="Контролер" style="width: 100%; max-width: 400px;">
+                <p>“Контролер воює проти тебе мізками. Не в значенні, що думає, а в значенні телепат він. Ти, коли на нього полюєш, частіше використовуй укриття. Контролер повинен тебе бачити обов'язково, а інакше в нього не вийде. І ще: Бігати він зовсім не вміє. Так що, якщо зовсім заборони, спробуй пригостити його гранатою.”</p>
+                <p>СНОРК<p>
+                <img src="/Mutant/снорк.jpeg" alt="снорк" style="width: 100%; max-width: 400px;">
+                <p>Залишки людей... немає їм спокою. Одиночний снорк - небезпека для вправного мисливця невелика. Чекаєш, коли він на тебе стрибне, і в польоті всаджуєш у нього заряд дробу. Гірше, коли їх кілька: тут вже доводиться просто бити по них з усією можливою швидкістю і принагідно ухилятися від стрибків. Снорки це знають, тому й вважають за краще не нападати по одному.</p>
+                <p>ПОЛТЕРГЕЙСТ</p>
+                <img src="/Mutant/потергейст.jpeg" alt="потергейст" style="width: 100%; max-width: 400px;">
+                <p>Ці бувають двох типів: одні гравітацією метають у тебе предмети, інші намагаються підсмажити. Хто недосвідчений - починає кола намотувати, а ось це якраз не треба. Є у полтергейсту одна особливість, навіть дві: сліпий і глухий. Не бачить, не чує, зате чудово відчуває все, що рухається у його полі. Досвідчений мисливець з полтергейстом працює так: завмер на якийсь час, вистрілив і знову завмер.</p>
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            <div class="right-bar">
+                <a href="OtherPage1.html" target="_blank">Угрупування</a>
+                <a href="OtherPage2.html" target="_blank">Зброя</a>
+                <a href="OtherPage3.html" target="_blank">Артефакти та аномалії 3</a>
+                <a href="history.html" target="_blank">історія світу гри</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
