@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікно з top-bar, right-bar і main-bar</title>
+    <style>
+        /* Стилі для розмітки */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url('peopleBG.jpg'); /* Фонове зображення */
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний колір */
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-start; /* Розташування вліво */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Зелений колір з напівпрозорим ефектом */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            margin: 0 -5px;
+        }
+        .main-bar {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+            font-family: Calibri, sans-serif; /* Зміна шрифту */
+        }
+        .right-bar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.5); /* Чорний колір з напівпрозорим ефектом */
+            padding: 20px;
+            margin: 0 5px; /* Змінено з 10px на 5px */
+            color: white;
+            text-align: center; /* Центруємо текст */
+            font-family: Calibri, sans-serif; /* Зміна шрифту */
+        }
+        .right-bar a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px; /* Додана відстань між пунктами */
+            display: block; /* Переносить кожен пункт на новий рядок */
+        }
+        .right-bar a:hover {
+            color: red; /* Колір тексту при наведенні */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button onclick="window.location.href='MainMenu.html'" style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer;">На головну</button>
+        </div>
+        <div class="content">
+            <div class="main-bar">
+                <p><strong>Угрупування зі всесвіту сталкер(у всіх угрупуваннь є свої модифіковані комбінезони)</strong></p>
+                <p><strong>Воля/свобода</strong></p>
+                <img src="people/свобода:воля.jpeg" alt="Воля" style="width: 100%; max-width: 400px;">
+                <p>“Анархічне угрупування цілью якого стоїть створення незалежного заповідника на території зони»”</p>
+                <p><strong>Долг</strong></p>
+                <img src="people/долг.jpeg" alt="Долг" style="width: 100%; max-width: 400px;">
+                <p>“Головний супротивник волі головна мета знищіти зону</p>
+                <p><strong>Сталкери</strong></p>
+                <img src="people/сталкер.jpeg" alt="Сталкери" style="width: 100%; max-width: 400px;">
+                <p>“Звичайні нелегали які пробрались на територію зони»”</p>
+                <p>Бандити<p>
+                <img src="people/бандити.jpeg" alt="Бандити" style="width: 100%; max-width: 400px;">
+                <p>Колишні увʼязнені або бандити які перебувають у розшуку</p>
+                <p>Чисте небо</p>
+                <img src="people/чисте небо.jpeg" alt="Чисте небо" style="width: 100%; max-width: 400px;">
+                <p>Угрупування ціль якого вивчати зону</p>
+                <p>Найманці</p>
+                <img src="people/найманці.jpeg" alt="Найманці" style="width: 100%; max-width: 400px;">
+                <p>Кілери яких відправели в зону для вбивства конкретної персени або діставаення документів і артефактів</p>
+                <p>Вчені</p>
+                <img src="people/вчені.jpeg" alt="Вчені" style="width: 100%; max-width: 400px;">
+                <p>Задача вчених вивчати зону за будь яких обставин</p>
+                <p>Військові</p>
+                <img src="people/військові.jpeg" alt="Військові" style="width: 100%; max-wid th: 400px;">
+                <p>Основна задача охорона блок постів та захоплення важливих документів</p>
+                <p>Торговці</p>
+                <img src="people/торговці.jpeg" alt="Торговці" style="width: 100%; max-width: 400px;">
+                <p>Основна задача продавати та купляти речі та видавання квестів(в серії ігор сталкер є багато торговців на фото зображений один з найбільш відомих)</p>
+                <p>Монолітовці</p>
+                <img src="people/моноліт.webp" alt="Монолітовці" style="width: 100%; max-width: 400px;">
+                <p>Фанатики які охороняють центр зони від стороніх осіб</p>
+                <p>О-сознання</p>
+                <img src="people/о-сознання.webp" alt="О-сознання" style="width: 100%; max-width: 400px;">
+                <p>Творці зони, основна мета припинити розширення зони</p>
+            
+            
+            </div>
+            
+            <div class="right-bar">
+                <a href="Mutant.html" target="_blank">Мутанти</a>
+                <a href="OtherPage2.html" target="_blank">Зброя</a>
+                <a href="OtherPage3.html" target="_blank">Артефакти та аномалії </a>
+                <a href="history.html" target="_blank">історія світу гри</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
