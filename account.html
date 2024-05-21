@@ -20,7 +20,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        input[type="text"], input[type="password"], input[type="submit"] {
+        input[type="text"], input[type="password"], input[type="submit"], input[type="checkbox"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -42,6 +42,14 @@
             text-decoration: underline;
             cursor: pointer;
         }
+        label {
+            display: flex;
+            align-items: center;
+        }
+        label input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +59,11 @@
             <input type="text" id="username" name="username" placeholder="Ім'я користувача" required>
             <input type="password" id="password" name="password" placeholder="Пароль" required>
             <input type="button" id="showPasswordBtn" value="Показати пароль">
-            <input type="submit" value="Створити акаунт">
+            <label>
+                <input type="checkbox" id="agreePolicy">
+                Я погоджуюсь з політикою конфіденційності
+            </label>
+            <input type="submit" id="submitBtn" value="Створити акаунт" disabled>
         </form>
     </div>
     <div style="text-align: center; margin-top: 20px;">
@@ -67,6 +79,11 @@
                 passwordField.type = "password";
                 this.value = "Показати пароль";
             }
+        });
+
+        document.getElementById("agreePolicy").addEventListener("change", function() {
+            var submitBtn = document.getElementById("submitBtn");
+            submitBtn.disabled = !this.checked;
         });
 
         document.getElementById("createAccountForm").addEventListener("submit", function(event) {

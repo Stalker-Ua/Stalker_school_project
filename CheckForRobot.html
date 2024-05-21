@@ -6,11 +6,20 @@
 <title>Підтвердження, що ви не робот</title>
 <style>
     body {
-        background-color: black;
+        background: linear-gradient(to bottom, gray, black);
         color: white;
         font-family: Arial, sans-serif;
         text-align: center;
-        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
     }
     .message {
         font-weight: bold;
@@ -19,7 +28,7 @@
 </style>
 </head>
 <body>
-<div id="verification">
+<div class="container" id="verification">
     <p>Введіть цей набір символів, щоб ми впевнилися, що ви не робот (у вас 3 спроби):</p>
     <p id="verificationCode"></p>
     <input type="text" id="userInput">
@@ -37,7 +46,7 @@
     var attempts = 3;
 
     function generateCode() {
-        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789œ∑´®†¥¨ˆøπåß∂ƒ©˙∆˚¬…æ≈ç√∫˜µ≤≥÷!@#$%^&*()-=»–+_⌘';
         var code = '';
         for (var i = 0; i < 6; i++) {
             code += characters.charAt(Math.floor(Math.random() * characters.length));
